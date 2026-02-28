@@ -7,9 +7,8 @@ export default function MainLayout({
 }>) {
   return (
     <div className="min-h-screen">
-      <Header />      
-
-      <main className="mx-auto w-full max-w-5xl px-4 py-6">{children}</main>
+      <Header />
+      <main>{children}</main>
     </div>
   );
 }

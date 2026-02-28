@@ -10,9 +10,9 @@ import {
 
 export function Header() {
     return (
-        <header className="border-b">
+        <header className="fixed inset-x-0 top-0 z-50 bg-gradient-to-b from-black/85 via-black/45 to-transparent text-white">
         <div className="mx-auto flex h-14 w-full max-w-5xl items-center gap-4 px-4">
-          <Link href="/" className="text-lg font-semibold tracking-tight">
+          <Link href="/" className="text-lg font-semibold tracking-tight text-white">
             Molgorithm
           </Link>
 
