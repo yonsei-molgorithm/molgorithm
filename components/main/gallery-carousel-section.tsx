@@ -36,8 +36,11 @@ export function GalleryCarouselSection() {
       >
         <CarouselContent>
           {galleryImages.map((image) => (
-            <CarouselItem key={image.src} className="basis-full md:basis-1/2 lg:basis-1/3">
-              <div className="overflow-hidden rounded-2xl border border-white/10">
+            <CarouselItem
+              key={image.src}
+              className="basis-full py-3 md:basis-1/2 lg:basis-1/3"
+            >
+              <div className="overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/20">
                 <img
                   src={image.src}
                   alt={image.alt}
