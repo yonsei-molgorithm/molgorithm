@@ -29,7 +29,7 @@ const galleryImages = [
 
 export function GalleryCarouselSection() {
   return (
-    <section className="mx-auto w-full px-4 py-14">
+    <section className="mx-auto w-full max-w-7xl px-4">
       <Carousel
         opts={{ align: "start", loop: true }}
         className="w-full"
@@ -44,7 +44,7 @@ export function GalleryCarouselSection() {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="h-[280px] w-full object-cover md:h-[460px]"
+                  className="h-[280px] w-full object-cover md:h-[400px]"
                 />
               </div>
             </CarouselItem>
