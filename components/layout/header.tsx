@@ -1,7 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "HOME" },
@@ -11,6 +20,7 @@ const navLinks = [
 ];
 
 export function Header() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -21,91 +31,69 @@ export function Header() {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-6 transition-all duration-300 ${
+    <header
+      className={cn(
+        "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled
           ? "bg-[#1f1f1f]/80 backdrop-blur-xl shadow-[0_40px_80px_rgba(157,226,255,0.06)]"
           : "bg-[#1f1f1f]/60 backdrop-blur-xl shadow-[0_40px_80px_rgba(157,226,255,0.06)]"
-      }`}
+      )}
     >
-      <Link
-        href="/"
-        className="text-2xl font-black tracking-tighter text-primary"
-      >
-        MOLGORITHM
-      </Link>
+      <nav className="flex justify-between items-center px-6 md:px-12 py-6">
+        <Link
+          href="/"
+          className="text-2xl font-black tracking-tighter text-primary"
+        >
+          MOLGORITHM
+        </Link>
 
-      {/* Desktop */}
-      <div className="hidden md:flex gap-12 items-center">
-        {navLinks.map((link, i) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={`font-bold tracking-tight uppercase text-xs transition-all duration-300 ${
-              i === 0
-                ? "text-primary font-black"
-                : "text-white/70 hover:text-primary"
-            }`}
-          >
-            {link.label}
-          </Link>
-        ))}
-        <div className="flex gap-4">
-          <Link
-            href="/join"
-            className="px-6 py-2 bg-primary text-primary-foreground font-bold tracking-tight uppercase text-xs transition-transform hover:scale-95"
-          >
-            JOIN
-          </Link>
-          <Link
-            href="/donate"
-            className="px-6 py-2 border border-outline-variant text-primary font-bold tracking-tight uppercase text-xs transition-transform hover:scale-95"
-          >
-            DONATE
-          </Link>
-        </div>
-      </div>
+        <div className="hidden md:flex items-center gap-8">
+          <NavigationMenu viewport={false}>
+            <NavigationMenuList className="gap-2">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
 
-      {/* Mobile */}
-      <button
-        className="md:hidden text-primary"
-        onClick={() => setOpen(!open)}
-      >
-        <span className="material-symbols-outlined">
-          {open ? "close" : "menu"}
-        </span>
-      </button>
+                return (
+                  <NavigationMenuItem key={link.href}>
+                    <NavigationMenuLink asChild active={isActive}>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          "px-3 py-2 font-bold tracking-tight uppercase text-xs rounded-md outline-none transition-colors",
+                          "focus-visible:ring-2 focus-visible:ring-ring/50",
+                          isActive
+                            ? "text-primary"
+                            : "text-white/70 hover:text-primary"
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                );
+              })}
+            </NavigationMenuList>
+          </NavigationMenu>
 
-      {open && (
-        <div className="absolute top-full left-0 w-full bg-[#1f1f1f]/95 backdrop-blur-xl md:hidden">
-          <div className="flex flex-col px-6 py-4 gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="py-3 font-bold tracking-tight uppercase text-xs text-white/70 hover:text-primary transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/join"
-              className="mt-2 py-3 bg-primary text-primary-foreground font-bold tracking-tight uppercase text-xs text-center"
-              onClick={() => setOpen(false)}
-            >
-              JOIN
-            </Link>
-            <Link
-              href="/donate"
-              className="py-3 border border-outline-variant text-primary font-bold tracking-tight uppercase text-xs text-center"
-              onClick={() => setOpen(false)}
-            >
-              DONATE
-            </Link>
+          <div className="flex gap-4">
+            <Button asChild>
+              <Link href="/join">JOIN</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/donate">DONATE</Link>
+            </Button>
           </div>
         </div>
-      )}
-    </nav>
+
+        <button
+          className="md:hidden text-primary"
+          onClick={() => setOpen(!open)}
+        >
+          <span className="material-symbols-outlined">
+            {open ? "close" : "menu"}
+          </span>
+        </button>
+      </nav>
+    </header>
   );
 }

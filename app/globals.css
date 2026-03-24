@@ -116,21 +116,36 @@
   --sidebar-ring: #9de2ff;
 }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #131313; }
-::-webkit-scrollbar-thumb { background: #353535; }
-::-webkit-scrollbar-thumb:hover { background: #9de2ff; }
+::-webkit-scrollbar {
+  width: 4px;
+}
 
-html { scroll-behavior: smooth; }
+::-webkit-scrollbar-track {
+  background: #131313;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #353535;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9de2ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     font-family: "Manrope", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
     @apply bg-background text-foreground;
   }
+
   ::selection {
     background-color: #9de2ff;
     color: #003545;
