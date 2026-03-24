@@ -8,7 +8,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-l from-primary/20 to-transparent" />
       </div>
       <div className="z-10">
-        <span className="font-label text-primary tracking-[0.4em] uppercase text-xs mb-8 block">
+        <span className="font-label text-tertiary tracking-[0.4em] uppercase text-xs mb-8 block">
           EST. 2019 / YONSEI ALGORITHM CIRCLE
         </span>
         <h1 className="font-headline text-[12vw] font-extrabold leading-[0.85] tracking-tighter text-foreground mb-12">

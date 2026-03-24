@@ -45,6 +45,7 @@
   --color-on-surface-variant: var(--on-surface-variant);
   --color-outline: var(--outline-color);
   --color-outline-variant: var(--outline-variant);
+  --color-tertiary: var(--tertiary);
 
   --font-sans: var(--app-font-sans);
   --font-headline: "Manrope", var(--app-font-sans);
@@ -69,7 +70,8 @@
 :root {
   --app-font-sans: "Manrope", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Dark editorial palette — #131313 base, #9de2ff primary */
+  /* Dark editorial palette — #131313 base, #9de2ff primary, #ffab27 tertiary */
+  --tertiary: #ffab27;
   --background: #131313;
   --foreground: #e2e2e2;
   --card: #1f1f1f;

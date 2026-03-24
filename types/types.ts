@@ -7,3 +7,10 @@ export interface Award {
   이름: string;
   팀명: string;
 }
+
+export interface Member {
+  연도: string;
+  학기: string;
+  이름: string;
+  핸들: string;
+}
