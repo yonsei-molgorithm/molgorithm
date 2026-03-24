@@ -37,146 +37,100 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
+  /* Custom surface colors from design */
+  --color-surface: var(--surface);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline-color);
+  --color-outline-variant: var(--outline-variant);
+
   --font-sans: var(--app-font-sans);
+  --font-headline: "Manrope", var(--app-font-sans);
+  --font-label: "Inter", var(--app-font-sans);
   --font-mono: var(--font-geist-mono);
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
 
-  --shadow-2xs: var(--shadow-2xs);
-  --shadow-xs: var(--shadow-xs);
-  --shadow-sm: var(--shadow-sm);
-  --shadow: var(--shadow);
-  --shadow-md: var(--shadow-md);
-  --shadow-lg: var(--shadow-lg);
-  --shadow-xl: var(--shadow-xl);
-  --shadow-2xl: var(--shadow-2xl);
+  --shadow-2xs: 0 1px 3px 0px rgb(0 0 0 / 0.05);
+  --shadow-xs: 0 1px 3px 0px rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0px rgb(0 0 0 / 0.10), 0 1px 2px -1px rgb(0 0 0 / 0.10);
+  --shadow: 0 1px 3px 0px rgb(0 0 0 / 0.10), 0 1px 2px -1px rgb(0 0 0 / 0.10);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.10);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.10), 0 4px 6px -4px rgb(0 0 0 / 0.10);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.10), 0 8px 10px -6px rgb(0 0 0 / 0.10);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
 :root {
-  --app-font-sans:
-    "Pretendard Variable",
-    Pretendard,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    "Apple SD Gothic Neo",
-    "Malgun Gothic",
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    sans-serif;
-  --background: oklch(1.00 0 0);
-  --foreground: oklch(0.14 0 0);
-  --card: oklch(1.00 0 0);
-  --card-foreground: oklch(0.14 0 0);
-  --popover: oklch(1.00 0 0);
-  --popover-foreground: oklch(0.14 0 0);
-  --primary: oklch(0.52 0.19 267.37);
-  --primary-foreground: oklch(0.93 0.03 255.58);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.20 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.56 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.20 0 0);
-  --destructive: oklch(0.67 0.11 261.78);
-  --border: oklch(0.92 0 0);
-  --input: oklch(0.92 0 0);
-  --ring: oklch(0.71 0 0);
-  --chart-1: oklch(0.65 0.22 36.85);
-  --chart-2: oklch(0.60 0.11 184.15);
-  --chart-3: oklch(0.40 0.07 227.18);
-  --chart-4: oklch(0.83 0.17 81.03);
-  --chart-5: oklch(0.77 0.17 65.36);
-  --radius: 0.625rem;
-  --shadow-2xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
-  --shadow-xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
-  --shadow-sm: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
-  --shadow: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
-  --shadow-md: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10);
-  --shadow-lg: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10);
-  --shadow-xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10);
-  --shadow-2xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.25);
-  --sidebar: oklch(0.99 0 0);
-  --sidebar-foreground: oklch(0.14 0 0);
-  --sidebar-primary: oklch(0.20 0 0);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.20 0 0);
-  --sidebar-border: oklch(0.92 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --app-font-sans: "Manrope", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Dark editorial palette — #131313 base, #9de2ff primary */
+  --background: #131313;
+  --foreground: #e2e2e2;
+  --card: #1f1f1f;
+  --card-foreground: #e2e2e2;
+  --popover: #1f1f1f;
+  --popover-foreground: #e2e2e2;
+  --primary: #9de2ff;
+  --primary-foreground: #003545;
+  --secondary: #1b1b1b;
+  --secondary-foreground: #9dcee3;
+  --muted: #1b1b1b;
+  --muted-foreground: #869399;
+  --accent: #1b1b1b;
+  --accent-foreground: #bbc8d0;
+  --destructive: #ffb4ab;
+  --border: rgba(60, 73, 78, 0.2);
+  --input: rgba(60, 73, 78, 0.3);
+  --ring: #9de2ff;
+  --chart-1: #9de2ff;
+  --chart-2: #9dcee3;
+  --chart-3: #ffd098;
+  --chart-4: #ffb95a;
+  --chart-5: #5ed4ff;
+  --radius: 0px;
+
+  /* Surface system */
+  --surface: #131313;
+  --surface-container: #1f1f1f;
+  --surface-container-low: #1b1b1b;
+  --surface-container-high: #2a2a2a;
+  --on-surface-variant: #bbc8d0;
+  --outline-color: #869399;
+  --outline-variant: #3c494e;
+
+  --sidebar: #1b1b1b;
+  --sidebar-foreground: #e2e2e2;
+  --sidebar-primary: #9de2ff;
+  --sidebar-primary-foreground: #003545;
+  --sidebar-accent: #1f1f1f;
+  --sidebar-accent-foreground: #e2e2e2;
+  --sidebar-border: rgba(60, 73, 78, 0.2);
+  --sidebar-ring: #9de2ff;
 }
 
-.dark {
-  --background: oklch(0.14 0 0);
-  --foreground: oklch(0.99 0 0);
-  --card: oklch(0.20 0 0);
-  --card-foreground: oklch(0.99 0 0);
-  --popover: oklch(0.20 0 0);
-  --popover-foreground: oklch(0.99 0 0);
-  --primary: oklch(0.92 0 0);
-  --primary-foreground: oklch(0.20 0 0);
-  --secondary: oklch(0.27 0 0);
-  --secondary-foreground: oklch(0.99 0 0);
-  --muted: oklch(0.27 0 0);
-  --muted-foreground: oklch(0.71 0 0);
-  --accent: oklch(0.27 0 0);
-  --accent-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.70 0.19 22.23);
-  --border: oklch(1.00 0 0 / 10%);
-  --input: oklch(1.00 0 0 / 15%);
-  --ring: oklch(0.56 0 0);
-  --chart-1: oklch(0.49 0.24 264.40);
-  --chart-2: oklch(0.70 0.16 160.43);
-  --chart-3: oklch(0.77 0.17 65.36);
-  --chart-4: oklch(0.62 0.26 305.32);
-  --chart-5: oklch(0.64 0.25 16.51);
-  --sidebar: oklch(0.20 0 0);
-  --sidebar-foreground: oklch(0.99 0 0);
-  --sidebar-primary: oklch(0.49 0.24 264.40);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.27 0 0);
-  --sidebar-accent-foreground: oklch(0.99 0 0);
-  --sidebar-border: oklch(1.00 0 0 / 10%);
-  --sidebar-ring: oklch(0.56 0 0);
-  --shadow-2xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
-  --shadow-xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
-  --shadow-sm: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
-  --shadow: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
-  --shadow-md: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10);
-  --shadow-lg: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10);
-  --shadow-xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10);
-  --shadow-2xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.25);
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #131313; }
+::-webkit-scrollbar-thumb { background: #353535; }
+::-webkit-scrollbar-thumb:hover { background: #9de2ff; }
+
+html { scroll-behavior: smooth; }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    font-family:
-      "Pretendard Variable",
-      Pretendard,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      "Helvetica Neue",
-      Arial,
-      "Noto Sans",
-      "Apple SD Gothic Neo",
-      "Malgun Gothic",
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-      sans-serif;
+    font-family: "Manrope", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
     @apply bg-background text-foreground;
+  }
+  ::selection {
+    background-color: #9de2ff;
+    color: #003545;
   }
 }
