@@ -1,26 +1,16 @@
-export interface Member {
-  id: string;
-  name: string;
-  class: string;
-}
-
-export interface Team {
-  id: string;
-  name: string;
-  memberIds: string;
-}
-
-export interface Competition {
-  id: string;
-  name: string;
-  date: string;
-}
-
 export interface Award {
-  id: number;
-  competitionId: string;
-  memberId?: string;
-  teamId?: string;
-  rank?: number;
-  awardName: string;
+  순번: string;
+  연도: string;
+  월: string;
+  내용: string;
+  상명: string;
+  이름: string;
+  팀명: string;
+}
+
+export interface Member {
+  연도: string;
+  학기: string;
+  이름: string;
+  핸들: string;
 }
