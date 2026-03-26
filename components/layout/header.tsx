@@ -50,20 +50,12 @@ export function Header() {
             {link.label}
           </Link>
         ))}
-        <div className="flex gap-4">
-          <Link
-            href="/join"
-            className="px-6 py-2 bg-primary text-primary-foreground font-bold tracking-tight uppercase text-xs transition-transform hover:scale-95"
-          >
-            JOIN
-          </Link>
-          <Link
-            href="/donate"
-            className="px-6 py-2 border border-outline-variant text-primary font-bold tracking-tight uppercase text-xs transition-transform hover:scale-95"
-          >
-            DONATE
-          </Link>
-        </div>
+        <Link
+          href="/join"
+          className="px-6 py-2 bg-primary text-primary-foreground font-bold tracking-tight uppercase text-xs transition-transform hover:scale-95"
+        >
+          JOIN
+        </Link>
       </div>
 
       {/* Mobile */}
@@ -95,13 +87,6 @@ export function Header() {
               onClick={() => setOpen(false)}
             >
               JOIN
-            </Link>
-            <Link
-              href="/donate"
-              className="py-3 border border-outline-variant text-primary font-bold tracking-tight uppercase text-xs text-center"
-              onClick={() => setOpen(false)}
-            >
-              DONATE
             </Link>
           </div>
         </div>
