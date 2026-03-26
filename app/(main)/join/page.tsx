@@ -1,9 +1,11 @@
 export default function JoinPage() {
+  const formUrl = process.env.NEXT_PUBLIC_JOIN_FORM_URL || "#";
+
   return (
     <section className="py-32 px-6 md:px-12 bg-primary" id="join">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
         <div className="text-primary-foreground">
-          <span className="font-label tracking-widest uppercase text-xs mb-4 block">
+          <span className="font-label tracking-widest uppercase text-xs mb-4 block opacity-80">
             05 // RECRUITMENT
           </span>
           <h2 className="font-headline text-6xl md:text-8xl font-black tracking-tighter mb-12">
@@ -31,51 +33,36 @@ export default function JoinPage() {
                 공지됩니다.
               </p>
             </div>
+            <div>
+              <h4 className="font-headline text-xl font-bold mb-2">
+                선발 방식
+              </h4>
+              <p className="opacity-80">
+                서류 지원으로만 선발합니다. 별도의 코딩 테스트나 면접은 없습니다.
+              </p>
+            </div>
           </div>
         </div>
 
         <div className="bg-[#131313] p-12 shadow-2xl">
-          <h3 className="font-headline text-3xl font-bold text-foreground mb-8">
-            가입 절차
-          </h3>
-          <div className="space-y-12">
-            <div className="flex gap-8">
-              <span className="font-headline text-4xl font-extrabold text-primary/20">
-                01
-              </span>
-              <div>
-                <h5 className="font-bold text-foreground mb-2">서류 지원</h5>
-                <p className="text-sm text-outline">
-                  간단한 자기소개와 알고리즘 관심 분야를 작성해 주세요.
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-8">
-              <span className="font-headline text-4xl font-extrabold text-primary/20">
-                02
-              </span>
-              <div>
-                <h5 className="font-bold text-foreground mb-2">코딩 테스트</h5>
-                <p className="text-sm text-outline">
-                  기초적인 알고리즘 문제 풀이 능력을 확인합니다.
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-8">
-              <span className="font-headline text-4xl font-extrabold text-primary/20">
-                03
-              </span>
-              <div>
-                <h5 className="font-bold text-foreground mb-2">면접</h5>
-                <p className="text-sm text-outline">
-                  학회 활동에 대한 열정과 협업 능력을 확인하는 면접입니다.
-                </p>
-              </div>
-            </div>
-          </div>
-          <button className="w-full mt-12 py-6 bg-primary text-primary-foreground font-headline font-bold uppercase tracking-widest hover:bg-white transition-colors">
+          <h3 className="font-headline text-3xl font-bold text-foreground mb-4">
             지원하기
-          </button>
+          </h3>
+          <p className="text-outline mb-12">
+            아래 버튼을 통해 지원서를 작성해 주세요. 간단한 자기소개와 알고리즘
+            관심 분야를 적어주시면 됩니다.
+          </p>
+          <a
+            href={formUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full py-6 bg-primary text-primary-foreground font-headline font-bold uppercase tracking-widest hover:bg-white transition-colors text-center"
+          >
+            지원서 작성
+          </a>
+          <p className="mt-6 text-xs text-outline text-center">
+            모집 기간이 아닌 경우 다음 모집 시 안내드리겠습니다.
+          </p>
         </div>
       </div>
     </section>
