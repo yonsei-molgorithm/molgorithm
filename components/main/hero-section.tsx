@@ -9,7 +9,7 @@ export function HeroSection() {
       </div>
       <div className="z-10">
         <span className="font-label text-tertiary tracking-[0.4em] uppercase text-xs mb-8 block">
-          EST. 2019 / YONSEI ALGORITHM CIRCLE
+          EST. 2000 / YONSEI ALGORITHM CLUB
         </span>
         <h1 className="font-headline text-[12vw] font-extrabold leading-[0.85] tracking-tighter text-foreground mb-12">
           MOLGORITHM

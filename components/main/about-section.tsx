@@ -1,21 +1,21 @@
 const items = [
   {
-    icon: "terminal",
-    title: "문제 해결 중심",
+    icon: "psychology",
+    title: "생각한다",
     description:
-      "모르고리즘은 단순히 코드를 작성하는 곳이 아닙니다. 코드는 풀이를 구현하는 매개체일 뿐, 우리는 '문제 해결'에 집중하며 동료들과 매주 대회에 참여하고 솔루션을 공유하며 성장합니다.",
+      "알고리즘의 핵심은 사고입니다. 매주 정기 세션에서 문제를 분석하고, 최적의 접근법을 설계하며, 논리적 사고력을 키웁니다.",
   },
   {
-    icon: "group_work",
-    title: "함께 성장",
+    icon: "code",
+    title: "푼다",
     description:
-      "매주 진행되는 정기 세션과 팀 연습을 통해 알고리즘 실력을 쌓고, 서로의 풀이를 리뷰하며 더 나은 접근법을 발견합니다. 혼자가 아닌 동료와 함께하는 성장을 추구합니다.",
+      "생각을 코드로 구현합니다. 난이도별 트랙에서 문제를 풀고, 서로의 풀이를 리뷰하며 더 나은 해법을 찾아갑니다.",
   },
   {
-    icon: "hub",
-    title: "Alumni Network",
+    icon: "emoji_events",
+    title: "경쟁한다",
     description:
-      "모르고리즘 출신 선배님들과 현 학회원들이 한자리에 모여 네트워킹하는 행사입니다. 알고리즘, 학교 생활, 보안, 금융 등 다양한 분야의 경험담을 나누며 시야를 넓힙니다.",
+      "ICPC, SCPC, UCPC 등 국내외 프로그래밍 대회에 팀을 이루어 참가합니다. 실전 경험을 통해 한계를 시험합니다.",
   },
 ];
 
@@ -23,13 +23,13 @@ export function AboutSection() {
   return (
     <section className="py-32 px-6 md:px-12 bg-surface-container-low" id="about">
       <div className="mb-24">
-        <span className="font-label text-primary tracking-widest uppercase text-xs mb-4 block">
+        <span className="font-label text-tertiary tracking-widest uppercase text-xs mb-4 block">
           01 // PHILOSOPHY
         </span>
         <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tighter">
           생각하고,
           <br />
-          풀고, 성장하다.
+          풀고, 경쟁한다.
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-outline-variant/20">
