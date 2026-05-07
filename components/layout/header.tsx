@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useTheme } from "@/components/layout/theme-provider";
 
 const navLinks = [
   { href: "/", label: "HOME" },
@@ -13,6 +14,10 @@ const navLinks = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, toggle } = useTheme();
+
+  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -24,8 +29,8 @@ export function Header() {
     <nav
       className={`fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-6 transition-all duration-300 ${
         scrolled
-          ? "bg-[#1f1f1f]/80 backdrop-blur-xl shadow-[0_40px_80px_rgba(157,226,255,0.06)]"
-          : "bg-[#1f1f1f]/60 backdrop-blur-xl shadow-[0_40px_80px_rgba(157,226,255,0.06)]"
+          ? "bg-card/80 backdrop-blur-xl shadow-sm"
+          : "bg-card/60 backdrop-blur-xl"
       }`}
     >
       <Link
@@ -44,7 +49,7 @@ export function Header() {
             className={`font-bold tracking-tight uppercase text-xs transition-all duration-300 ${
               i === 0
                 ? "text-primary font-black"
-                : "text-white/70 hover:text-primary"
+                : "text-foreground/70 hover:text-primary"
             }`}
           >
             {link.label}
@@ -56,26 +61,46 @@ export function Header() {
         >
           JOIN
         </Link>
+        <button
+          onClick={toggle}
+          className="text-foreground/50 hover:text-primary transition-colors"
+          aria-label="테마 전환"
+        >
+          <span className="material-symbols-outlined text-xl">
+            {mounted ? (theme === "dark" ? "light_mode" : "dark_mode") : "light_mode"}
+          </span>
+        </button>
       </div>
 
       {/* Mobile */}
-      <button
-        className="md:hidden text-primary"
-        onClick={() => setOpen(!open)}
-      >
-        <span className="material-symbols-outlined">
-          {open ? "close" : "menu"}
-        </span>
-      </button>
+      <div className="md:hidden flex items-center gap-3">
+        <button
+          onClick={toggle}
+          className="text-foreground/50 hover:text-primary transition-colors"
+          aria-label="테마 전환"
+        >
+          <span className="material-symbols-outlined text-xl">
+            {mounted ? (theme === "dark" ? "light_mode" : "dark_mode") : "light_mode"}
+          </span>
+        </button>
+        <button
+          className="text-primary"
+          onClick={() => setOpen(!open)}
+        >
+          <span className="material-symbols-outlined">
+            {open ? "close" : "menu"}
+          </span>
+        </button>
+      </div>
 
       {open && (
-        <div className="absolute top-full left-0 w-full bg-[#1f1f1f]/95 backdrop-blur-xl md:hidden">
+        <div className="absolute top-full left-0 w-full bg-card/95 backdrop-blur-xl md:hidden">
           <div className="flex flex-col px-6 py-4 gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-3 font-bold tracking-tight uppercase text-xs text-white/70 hover:text-primary transition-colors"
+                className="py-3 font-bold tracking-tight uppercase text-xs text-foreground/70 hover:text-primary transition-colors"
                 onClick={() => setOpen(false)}
               >
                 {link.label}

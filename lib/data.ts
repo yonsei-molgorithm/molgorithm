@@ -1,5 +1,5 @@
 import Papa from "papaparse";
-import type { Award, Member } from "@/types/types";
+import type { Award, Member, Session } from "@/types/types";
 
 async function fetchCSV<T>(url: string): Promise<{ data: T[]; fetchedAt: Date }> {
   const res = await fetch(url, { next: { revalidate: 60 } });
@@ -16,4 +16,9 @@ export async function getAwards() {
 export async function getMembers() {
   const { data, fetchedAt } = await fetchCSV<Member>(process.env.MEMBERS_CSV_URL!);
   return { data: data.filter((row) => row.이름?.trim()), fetchedAt };
+}
+
+export async function getSessions() {
+  const { data, fetchedAt } = await fetchCSV<Session>(process.env.SESSIONS_CSV_URL!);
+  return { data: data.filter((row) => row.날짜?.trim()), fetchedAt };
 }

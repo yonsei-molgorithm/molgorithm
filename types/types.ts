@@ -14,3 +14,9 @@ export interface Member {
   이름: string;
   핸들: string;
 }
+
+export interface Session {
+  날짜: string;
+  주제: string;
+  발제자: string;
+}

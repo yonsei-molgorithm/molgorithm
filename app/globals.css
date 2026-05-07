@@ -70,6 +70,53 @@
 :root {
   --app-font-sans: "Manrope", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
 
+  /* Light editorial palette */
+  --tertiary: #d48a00;
+  --background: #f5f5f5;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #0077a3;
+  --primary-foreground: #ffffff;
+  --secondary: #e8e8e8;
+  --secondary-foreground: #005f82;
+  --muted: #e8e8e8;
+  --muted-foreground: #5a6a70;
+  --accent: #e8e8e8;
+  --accent-foreground: #334b52;
+  --destructive: #c0392b;
+  --border: rgba(60, 73, 78, 0.15);
+  --input: rgba(60, 73, 78, 0.15);
+  --ring: #0077a3;
+  --chart-1: #0077a3;
+  --chart-2: #005f82;
+  --chart-3: #d48a00;
+  --chart-4: #b87200;
+  --chart-5: #00a8e0;
+  --radius: 0px;
+
+  /* Surface system */
+  --surface: #f5f5f5;
+  --surface-container: #ffffff;
+  --surface-container-low: #efefef;
+  --surface-container-high: #e0e0e0;
+  --on-surface-variant: #334b52;
+  --outline-color: #7a8d93;
+  --outline-variant: #c0ccce;
+
+  --sidebar: #efefef;
+  --sidebar-foreground: #111111;
+  --sidebar-primary: #0077a3;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffffff;
+  --sidebar-accent-foreground: #111111;
+  --sidebar-border: rgba(60, 73, 78, 0.15);
+  --sidebar-ring: #0077a3;
+}
+
+.dark {
   /* Dark editorial palette — #131313 base, #9de2ff primary, #ffab27 tertiary */
   --tertiary: #ffab27;
   --background: #131313;
@@ -117,9 +164,9 @@
 }
 
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #131313; }
-::-webkit-scrollbar-thumb { background: #353535; }
-::-webkit-scrollbar-thumb:hover { background: #9de2ff; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--outline-variant); }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
 html { scroll-behavior: smooth; }
 
